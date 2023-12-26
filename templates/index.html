@@ -1,0 +1,618 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/styles/style.css' %}">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.css'>
+    <link rel="stylesheet" href="{% static 'assets/styles/swiperStyle.css' %}">
+    <title>Nurzaman</title>
+</head>
+
+<body>
+    <section class="menu" id="menu">
+        <div id="closeMenu" class="menuHead">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M13 1L1 13" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M1 1L13 13" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Закрыть
+        </div>
+        {% include 'include/header.html' %}
+        <div>
+            <div class="sosial">
+                <img src="{% static 'assets/img/Group 4.svg' %}" alt="">
+                <img src="{% static 'assets/img/Group 6.svg' %}" alt="">
+                <img src="{% static 'assets/img/Group 5.svg' %}" alt="">
+            </div>
+        </div>
+    </section>
+    <header style="background: center;background-image: url({{slide.image.url}});" class="header">
+        <nav class="nav" style="    background: rgba(0, 0, 0, 0.30);">
+            <div class="burger" id="menuButton">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+                    <path d="M1 1H15" stroke="white" stroke-linecap="round" />
+                    <path d="M1 6H15" stroke="white" stroke-linecap="round" />
+                    <path d="M1 11H15" stroke="white" stroke-linecap="round" />
+                </svg>
+                <p>Меню</p>
+            </div>
+            <div class="logo">
+                <img src="{{logo.logo_1.url}}"style='width: 185px;px' alt="">
+            </div>
+            <div></div>
+        </nav>
+
+        <div class="headerFoot">
+            <h1>
+                {{slide.title}}
+            </h1>
+            <div class="socialMedia">
+                <img id="openModal" src="{% static 'assets/svg/Group 4.svg' %}" alt="">
+                <img src="{% static 'assets/svg/Group 6.svg' %}" alt="">
+            </div>
+        </div>
+    </header>
+    <section id="section1" style="background-image: url({% static 'assets/img/Rectangle 3.png' %});" class="prideSection">
+        <div class="prideHead">
+            <img src="{{ logo.logo_3.url }}" style="width: 200px"  alt="">
+            <h1>
+                Нам есть
+                <u>
+                    чем гордиться
+                </u>
+            </h1>
+        </div>
+        <div class="prideTable">
+            <div class="borderTopNone borderLeftNone">
+                <h1>{{blog.descriptions_1|safe}}</h1>
+            </div>
+            <div class="borderTopNone">
+                <h4>{{blog.descriptions_2|safe}}</h4>
+                
+            </div>
+            <div class="borderTopNone borderRightNone">
+                <h4>{{blog.descriptions_3|safe}}</h4>
+                
+            </div>
+            <div class="borderBottomNone borderLeftNone">
+                <h1>{{blog.descriptions_4|safe}}</h1>
+                
+            </div>
+            <div class="borderBottomNone">
+                <h4>{{blog.descriptions_5|safe}}</h4>
+            </div>
+            <div class="borderBottomNone borderRightNone">
+                <h1>{{blog.descriptions_6|safe}}</h1>
+                
+        </div>
+    </section>
+    <section id="section2" class="projekts">
+        <div class="prideHead">
+
+            <h1>
+                НАШИ
+                <u>
+                    ПРОЕКТЫ
+                </u>
+            </h1>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="owl-carousel owl-theme">
+            {% for partner in partner %}
+            <div class="projektCaruselItem">
+                <img src="{{partner.image.url}}" alt="">
+            </div>
+            {% endfor %}
+
+
+        </div>
+        </div>
+    </section>
+    <section id="section3" class="direktors">
+        <div class="prideHead">
+
+            <h1>
+                Обращение
+                <u>
+                    директоров
+                </u>
+            </h1>
+        </div>
+        <div class="direktorsMain">
+            <div class="direktorsImage"> <img src="{{about.image.url}}" alt=""></div>
+            <div class="dots">
+                <img src="{{about.image_2.url}}" alt="">
+            </div>
+            <div>
+                <p>{{about.descriptions|safe}}</p>
+            </div>
+
+        </div>
+    </section>
+    <section class="sliderSection">
+        <div class="slider">
+            <div class="slide_viewer">
+                <div class="slide_group">
+                    {% for info in info %}
+                    <div class="slide">
+                        <div class="sliderItem">
+                            <div class="sliderItemImage">
+                                <img src="{{info.image.url}}" alt="">
+                            </div>
+                            <div class="sliderItemRight">
+                                <div class="prideHead">
+                                    <h1>{{info.title}}</h1>
+                                    <br><br><br><br><br>
+                                    <div>
+                                        <p>{{info.descriptions|safe}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+                    
+
+        </div><!-- End // .slider -->
+        <div class="directional_nav">
+            <div class="previous_btn" title="Previous">
+                <img src="{% static 'assets/svg/Group 15.svg' %}" alt="">
+            </div>
+            <div class="next_btn" title="Next">
+                <img src="{% static 'assets/svg/Group 14.svg' %}" alt="">
+            </div>
+
+        </div>
+
+        <div class="slide_buttons">
+        </div>
+        <div class="pogination">
+            <p id="curentPage"></p>/ <p id="totalPages"></p>
+        </div>
+        <!-- End // .directional_nav -->
+    </section>
+    <section id="section4">
+        <div style="padding: 13% 0 10% 0" class="prideHead">
+
+            <h1>
+                {{infoplus.title|safe}}
+            </h1>
+        </div>
+        <div class="servisesSection1"
+            style="background: center; background-image: url({{infoplus.image.url}}) ">
+            <div class="leftSectionOFSevises">
+                <div class="glassCard">
+                    <p>{{infoplus.descriptions_1|safe}}</p>
+                    
+                </div>
+                <div class="glassCard">
+                    <h1>{{infoplus.descriptions_2|safe}}</h1>
+                    
+                </div>
+                <div class="glassCard">
+                    <h1>{{infoplus.descriptions_3|safe}}</h1>
+                </div>
+                <div class="glassCard">
+                    <ul>
+                        <li>{{infoplus.descriptions_4|safe}}</li>
+                        
+                    </ul>
+                </div>
+                <div style="margin-left: 25rem;" class="glassCard">
+                    <h1>{{infoplus.descriptions_5|safe}}</h1>
+                </div>
+            </div>
+            <div class="RightSectionOFSevises">
+                <div class="glassCard">
+
+                    <h2>
+                        {{infoplus.descriptions_6|safe}}
+                    </h2>
+                    
+                </div>
+                <div style="margin-right: 5rem;" class="glassCard">
+
+                    <h2>
+                        {{infoplus.descriptions_7|safe}}
+                    </h2>
+                    
+                </div>
+                <div style="margin-right: 5rem;" class="glassCard">
+
+                    <p>{{infoplus.descriptions_8|safe}}</p>
+                </div>
+                <div style="margin-right: 7rem;" class="glassCard">
+                    <h1>{{infoplus.descriptions_9|safe}}</h1>
+                </div>
+                <div style="margin-right: 7rem;" class="glassCard">
+                    
+                    <p>{{infoplus.descriptions_10|safe}}</p>
+                </div>
+                <div style="margin-right: 15rem;" class="glassCard">
+                    <p>{{infoplus.descriptions_11|safe}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div style="padding: 13% 0 1rem 0" class="prideHead">
+
+            <h1>
+                {{gellary.title}}
+            </h1>
+        </div>
+        <div class="alalalal">
+            <p>{{gellary.descriptions|safe}}</p>
+        </div>
+        <br><br><br>
+    </section>
+    <section class="galery">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="galaryItem">
+                        <img src="{{gellary.image1.url}}" alt="">
+                        <div class="backDrop">
+
+                        </div>
+                    </div>
+                    <div class="galaryNavigation">
+                        <div class="swiper-button-prev">
+                            <img src="{% static 'assets/svg/Group 15.svg' %}" alt="">
+                        </div>
+                        <div class="swiper-button-next">
+                            <img src="{% static 'assets/svg/Group 14.svg' %}" alt="">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="galaryItem">
+                        <img src="{{gellary.image2.url}}" alt="">
+                        <div class="backDrop">
+
+                        </div>
+                    </div>
+                    <div class="galaryNavigation">
+                        <div class="swiper-button-prev">
+                            <img src="{% static 'assets/svg/Group 15.svg' %}" alt="">
+                        </div>
+                        <div class="swiper-button-next">
+                            <img src="{% static 'assets/svg/Group 14.svg' %}" alt="">
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- Add Pagination -->
+
+
+        </div>
+        <br>
+        <br>
+        <div class="swiper-pagination"></div>
+    </section>
+    <section>
+        <div style="padding: 13% 0 1rem 0" class="prideHead">
+
+            <h1>
+                Сделай
+                <u>
+                    свой выбор
+                </u>
+            </h1>
+        </div>
+
+        <br><br><br>
+    </section>
+    <section id="section5" class="sectionINindex" style="padding: 27px; display: flex; justify-content: space-between;">
+        <div class="aboutFlat">
+            <h1>{{choise.titlle}}</h1>
+
+            <div class="roomItem">
+                <h1>{{choise.title1}}</h1>
+
+                <h2>
+                    / {{choise.description1}}
+                </h2>
+            </div>
+            <div class="roomItem">
+                <h1>{{choise.title2}}</h1>
+
+                <h2>
+                    / {{choise.description2}}
+                </h2>
+            </div>
+            <div class="roomItem">
+                <h1>{{choise.title3}}</h1>
+
+                <h2>
+                    / {{choise.description3}}
+                </h2>
+            </div>
+            <div class="roomItem">
+                <h1>{{choise.title4}} 2</h1>
+
+                <h2>
+                    / {{choise.description4}}
+                </h2>
+            </div>
+            <div class="roomItem">
+                <h1>{{choise.title5}}</h1>
+
+                <h2>
+                    / {{choise.description5}}
+                </h2>
+            </div>
+            <div class="roomItem">
+                <h1>{{choise.title6}}</h1>
+
+                <h2>
+                    / {{choise.description5}}
+                </h2>
+            </div>
+        </div>
+        <div class="flatImage">
+            <div class="backImage">
+                <img src="{{choise.image.url}}" alt="">
+            </div>
+            <a href="{%url 'catalog'%}">
+                <div class="toFlatButton">Выбрать квартиру</div>
+            </a>
+
+        </div>
+    </section>
+    <section>
+        <div style="padding: 13% 0 1rem 0" class="prideHead">
+
+            <h1>
+                {{one.title}}
+            </h1>
+        </div>
+        <div class="alalalal">
+            <p>{{one.descrioptions|safe}}</p>
+        </div>
+        <br><br><br>
+    </section>
+    <section class="galery">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="galaryItem">
+                        <img src="{{one.image1.url}}" alt="">
+                        <div class="backDrop">
+
+                        </div>
+                    </div>
+                    <div class="galaryNavigationn">
+                        <div class="swiper-button-prev">
+                            <img src="{% static 'assets/svg/Group 15.svg' %}" alt="">
+                        </div>
+                        <div class="swiper-button-next">
+                            <img src="{% static 'assets/svg/Group 14.svg' %}" alt="">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="galaryItem">
+                        <img src="{{one.image2.url}}" alt="">
+                        <div class="backDrop">
+
+                        </div>
+                    </div>
+                    <div class="galaryNavigation" style="flex-direction: column; align-items: start;">
+                        <h1>{{one.name}}</h1>
+                        <br>
+                        <p>{{one.descrioption|safe}}</p>
+                    </div>
+                    <div class="galaryNavigationn">
+                        <div class="swiper-button-prev">
+                            <img src="{% static 'assets/svg/Group 15.svg' %}" alt="">
+                        </div>
+                        <div class="swiper-button-next">
+                            <img src="{% static 'assets/svg/Group 14.svg' %}" alt="">
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- Add Pagination -->
+
+
+        </div>
+
+    </section>
+
+    <section>
+        <div style="padding: 13% 0 1rem 0" class="prideHead">
+
+            <h1>
+                Преимущества
+                <u>
+                    номер два
+                </u>
+            </h1>
+        </div>
+        <div class="alalalal">
+            
+        </div>
+        <br><br><br>
+    </section>
+    <section style="padding: 27px; overflow: hidden;">
+        <div class="swiper-container2">
+            <div class="swiper-wrapper">
+                {% for two in two %}
+                <div class="swiper-slide">
+                    <div class="galaryItem">
+                        <img src="{{two.image.url}}" alt="">
+                        <div class="backDrop">
+                            
+                        </div>
+                    </div>
+                    <div class="galaryNavigation" style="flex-direction: column; align-items: start;">
+                        <h1>{{two.title}}</h1>
+                        <br>
+                        <p>{{two.descriptions}}</p>
+                    </div>
+                    
+                </div>
+                {% endfor %}
+                
+                
+            </div>
+            <!-- Add Pagination -->
+            
+            <div class="pafinationServoice">
+                <div class="swiper-button-prev2">
+                    <img src="{% static 'assets/svg/Group 15.svg' %}" alt="">
+                </div>
+                <h1>11/11</h1>
+                <div class="swiper-button-next2">
+                    <img src="{% static 'assets/svg/Group 14.svg' %}" alt="">
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+    <section>
+        <div style="padding: 13% 0 1rem 0" class="prideHead">
+
+            <h1>
+                Окружение
+            </h1>
+        </div>
+
+        <br><br><br>
+    </section>
+    <section class="sliderSection">
+        <div class="slider">
+            <div class="slide_viewer">
+                <div class="slide_group">
+                    {% for enviroment in enviroment %}
+                    <div class="slide">
+                        <div class="sliderItem">
+                            <div class="sliderItemImage">
+                                <img src="{{enviroment.image.url}}" alt="">
+                            </div>
+                            <div class="sliderItemRight">
+                                <div class="prideHead" style="    align-items: start;">
+
+                                    <h1>
+                                        {{enviroment.title}}
+
+                                    </h1>
+                                    <br><br><br><br><br>
+                                    <div>
+                                        <div class="shools">
+                                            <div>
+                                                
+                                                <p>{{enviroment.descriptions_1|safe}}</p>
+                                            </div>
+                                            <div>
+                                                
+                                                <p>{{enviroment.descriptions_2|safe}}</p>
+                                            </div>
+                                            <div>
+                                                
+                                                <p>{{enviroment.descriptions_3|safe}}</p>
+                                            </div>
+                                            <div>
+
+                                                <p>{{enviroment.descriptions_4|safe}}</p>
+                                            </div>
+                                            <div>
+
+                                                <p>{{enviroment.descriptions_5|safe}}</p>
+                                            </div>
+                                            <div>
+                                                
+                                                <p>{{enviroment.descriptions_6|safe}}</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div><!-- End // .slider -->
+        <div class="directional_nav">
+            <div class="previous_btn" title="Previous">
+                <img src="{% static 'assets/svg/Group 15.svg' %}" alt="">
+            </div>
+            <div class="next_btn" title="Next">
+                <img src="{% static 'assets/svg/Group 14.svg' %}" alt="">
+            </div>
+
+        </div>
+
+        <div class="slide_buttons">
+        </div>
+        <div class="pogination">
+            <p id="curentPage"></p>/ <p id="totalPages"></p>
+        </div>
+        <!-- End // .directional_nav -->
+    </section>
+    <section>
+        <div class="betwenHead">
+            <div>
+                <h1>{{street.name|safe}}</h1>
+                
+            </div>
+            <div>
+                <p>{{street.description|safe}}</p>
+                
+            </div>
+        </div>
+    </section>
+    <section style="padding: 27px; position: relative;">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12131.108662269386!2d72.77061313390732!3d40.524416158728336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bdadba4c64ab71%3A0xbbf2012b56aa562c!2z0JrRi9GA0LPRi9C30YHRgtCw0L0g0LrQuNC90L7RgtC10LDRgtGA0Ys!5e0!3m2!1sru!2skg!4v1702478126665!5m2!1sru!2skg"
+            width="100%" height="600px" style="border:0;    filter: grayscale(100%);" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </section>
+    <br><br><br><br>
+    <section id="section6" class="form">
+        <form class="formSection" method="POST" >
+            {% csrf_token %}
+            <h1>Заказать
+                обратный Звонок</h1>
+            <input placeholder="Введите имя" name="name" class="Forminput" type="text">
+            <input placeholder="Введите почту" name="email" class="Forminput" type="text">
+            <input placeholder="Введите номер" name="phone" class="Forminput" type="text">
+            <div class="checkbox">
+                <input type="checkbox" name="" id="">
+                <p>Я даю согласие на обработку моих персональных данных согласно политике конфиденциальности</p>
+            </div>
+            <button class="formButton">Заказать звонок</button>
+        </form>
+        <div class="formImager">
+            <img src="{% static 'assets/img/Rectangle 27 (2).png' %}" alt="">
+
+        </div>
+    </section>
+    <br><br><br><br>
+{% include 'include/footer.html' %}
