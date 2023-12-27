@@ -8,3 +8,9 @@ class ContactFilterAdmin(admin.ModelAdmin):
     list_display=('name', 'phone')
     search_fields=('name', 'phone')
 admin.site.register(models.Cotact, ContactFilterAdmin)
+
+class Contact_2FilterAdmin(admin.ModelAdmin):
+    list_filter=('name',)
+    list_display=('name', 'phone')
+    search_fields=('name', 'phone')
+admin.site.register(models.Contact_2, Contact_2FilterAdmin)
