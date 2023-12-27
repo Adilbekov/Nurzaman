@@ -37,5 +37,23 @@ class Contact_2(models.Model):
         return f'{self.name} - {self.phone}'
     
     class Meta:
+        verbose_name='Заказать звонки'
+        verbose_name_plural='Заказать звонк'
+
+
+class Contact_3(models.Model):
+    name=models.CharField(
+        max_length=255,
+        verbose_name='Имя'
+    )
+    phone=models.CharField(
+        max_length=255,
+        verbose_name='Телефонный номер'
+    )
+    
+    def __str__(self):
+        return f'{self.name} - {self.phone}'
+    
+    class Meta:
         verbose_name='Дополнительные данные для обработки'
         verbose_name_plural='Дополнительные данные'

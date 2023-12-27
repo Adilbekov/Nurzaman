@@ -5,14 +5,14 @@
                 <img src="{{logo.logo_2.url}}" style='width:180px' alt="">
             </div>
             <br><br>
-            <input placeholder="Введите имя" name="name" type="text">
+            <input placeholder="Введите имя" name="name_2"  type="text">
             <br>
-            <input placeholder="Введите номер" name="phone" class="Forminput" type="text">
+            <input placeholder="Введите номер" name="phone_2" class="Forminput" type="text">
             <div class="checkboxx">
                 <input type="checkbox" name="" id="">
                 <p>Я согласен на обработку Персональных данных</p>
             </div>
-            <button name="base" class="footerButton">
+            <button name="secondary" class="footerButton">
                 Отправить
             </button>
         </div>
@@ -105,10 +105,11 @@
             </div>
 
 
-            <form class="modalForm">
-                <input class="modalInput" type="text" placeholder="Ваше имя">
+            <form class="modalForm" method="POST">
+                {% csrf_token %}
+                <input class="modalInput" type="text" placeholder="Ваше имя" name="name_3">
 
-                <input class="modalInput" type="text" placeholder="Ваш номер телефона">
+                <input class="modalInput" type="text" placeholder="Ваш номер телефона" name="phone_3">
 
 
                 <br><br>
@@ -117,7 +118,7 @@
                     Я согласен с политикой конфиденциальности
                 </div>
                 <br><br>
-                <button>Отправить</button>
+                <button name="base" > Отправить </button>
             </form>
         </div>
     </div>
